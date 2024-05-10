@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 mt-5">
+            <form method="POST" class="card card-body">
+                <h2 class="text-center">SignUp</h2>
+                {% csrf_token %}
+                <!-- este es un comando de jinja(motor de plantillas de django, debe estar dentro del formulario) -->
+                <div class="mb-3">
+                    <label class="form-control" >
+                        Username                        
+                        <input type="text" name="username" class="form-control" placeholder="username">
+                    </label>
+                </div>
+                <div class="mb-3">
+                    <label class="form-control" >                        
+                        Password
+                        <input type="password" name="password1" class="form-control" placeholder="password">
+                    </label>
+                </div>
+                <div class="mb-3">
+                    <label class="form-control">                        
+                        Confirm Password
+                        <input type="password" name="password2" class="form-control" placeholder="confirm password">
+                    </label>
+                </div>
+                
+                <!-- {{form}} --> <!-- este form tiene una prop para mostrar mejor los input .as_p -->
+                <button class="btn btn-primary">SignUp</button>
+            </form>
+        </div>
+    </div>
+
+</main>
+{% endblock %}
